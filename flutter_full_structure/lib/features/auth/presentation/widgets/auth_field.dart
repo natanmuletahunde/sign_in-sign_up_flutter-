@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+
 class AuthField extends StatelessWidget {
-  final TextEditingController controller;
   final String hintext;
-  final bool  isObscureText;
-  const AuthField ({super.key, required this.hintext,required this.controller,
-  this.isObscureText = false, required bool obscureText});
+  final TextEditingController controller;
+  final bool obscureText;
+
+  const AuthField({
+    super.key,
+    required this.hintext,
+    required this.controller,
+    this.obscureText = false, // Default is false
+  });
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-       controller: controller,
-       decoration: InputDecoration(
-        hintText: hintext
-       ),
-       validator: (value){
-          if(value!.isEmpty){
-            return 'Please enter your $hintext';
-          }
-          return null;
-       },
-       obscureText: isObscureText,
+      controller: controller,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        hintText: hintext,
+        border: const OutlineInputBorder(),
+      ),
     );
   }
 }
