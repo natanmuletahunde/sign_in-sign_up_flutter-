@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_full_structure/core/theme/app_pallet.dart';
+import 'package:flutter_full_structure/features/auth/presentation/pages/login_page.dart';
 import 'package:flutter_full_structure/features/auth/presentation/widgets/auth_field.dart';
 import 'package:flutter_full_structure/features/auth/presentation/widgets/auth_gradient.dart';
 
@@ -70,18 +72,23 @@ class _SignUpPage extends State<SignUpPage> {
                 buttonText: 'sign up'
               ),
               const SizedBox(height: 15),
-              RichText(
-                text: TextSpan(
-                  text: "Don't have an account? ",
-                  style: Theme.of(context).textTheme.titleMedium,
-                  children: [
-                    TextSpan(
-                      text: 'Sign in',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: AppPallete.gradient2,
-                          ),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () {
+                   Navigator.push(context, LoginPage.Route());
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: "Don't have an account? ",
+                    style: Theme.of(context).textTheme.titleMedium,
+                    children: [
+                      TextSpan(
+                        text: 'Sign in',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              color: AppPallete.gradient2,
+                            ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: keyboardHeight), // Adjust padding based on keyboard height

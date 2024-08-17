@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_full_structure/core/theme/app_pallet.dart';
 import 'package:flutter_full_structure/features/auth/presentation/pages/signup_page.dart';
 import 'package:flutter_full_structure/features/auth/presentation/widgets/auth_field.dart';
 import 'package:flutter_full_structure/features/auth/presentation/widgets/auth_gradient.dart';
 
 class LoginPage extends StatefulWidget {
-  const  LoginPage({super.key});
+  // ignore: non_constant_identifier_names
+  static Route ()=> 
+    MaterialPageRoute(builder: (context) =>  const LoginPage());
+  const LoginPage ({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPage();
