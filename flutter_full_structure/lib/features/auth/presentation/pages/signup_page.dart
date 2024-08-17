@@ -35,6 +35,7 @@ class _SignUpPage extends State<SignUpPage> {
     final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
 
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.all(15),
         child: SingleChildScrollView(
